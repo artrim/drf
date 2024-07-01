@@ -1,0 +1,86 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$2qIVvJka2opJntlQB0BUyE$SIHyrK547vWheqtFAMpI30utDKBfEWLQrz0IQv/CLtY=",
+            "last_login": "2024-06-25T16:16:15.482Z",
+            "is_superuser": true,
+            "first_name": "",
+            "last_name": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-06-25T16:16:04.078Z",
+            "email": "user@mail.com",
+            "phone": null,
+            "avatar": "",
+            "country": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "password": "111",
+            "last_login": null,
+            "is_superuser": false,
+            "first_name": "Fedor",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-06-25T16:22:47Z",
+            "email": "fedor@mail.com",
+            "phone": null,
+            "avatar": "",
+            "country": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 3,
+        "fields": {
+            "password": "222",
+            "last_login": null,
+            "is_superuser": false,
+            "first_name": "Pavel",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-06-25T16:23:55Z",
+            "email": "pavel@mail.com",
+            "phone": null,
+            "avatar": "",
+            "country": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.payments",
+        "pk": 1,
+        "fields": {
+            "user": 2,
+            "date_payment": "2024-06-25",
+            "course_paid": 3,
+            "lesson_paid": null,
+            "payment_amount": 1000,
+            "payment_method": "non-cash"
+        }
+    },
+    {
+        "model": "users.payments",
+        "pk": 2,
+        "fields": {
+            "user": 3,
+            "date_payment": "2024-06-25",
+            "course_paid": null,
+            "lesson_paid": 3,
+            "payment_amount": 500,
+            "payment_method": "cash"
+        }
+    }
+]
