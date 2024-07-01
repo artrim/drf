@@ -1,9 +1,11 @@
 from rest_framework import serializers
 
 from materials.models import Course, Lesson
+from materials.validators import url_validator
 
 
 class LessonSerializer(serializers.ModelSerializer):
+    url = serializers.CharField(validators=[url_validator])
 
     class Meta:
         model = Lesson
