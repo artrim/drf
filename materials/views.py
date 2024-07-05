@@ -11,6 +11,7 @@ from materials.serializers import CourseSerializer, LessonSerializer, Subscripti
 
 
 class CourseViewSet(viewsets.ModelViewSet):
+    """Viewset for course"""
     serializer_class = CourseSerializer
     queryset = Course.objects.all()
     pagination_class = MyPagination
@@ -31,6 +32,7 @@ class CourseViewSet(viewsets.ModelViewSet):
 
 
 class LessonCreateAPIView(generics.CreateAPIView):
+    """Lesson create endpoint"""
     serializer_class = LessonSerializer
     permission_classes = (~IsModer, IsAuthenticated)
 
@@ -41,29 +43,34 @@ class LessonCreateAPIView(generics.CreateAPIView):
 
 
 class LessonListAPIView(generics.ListAPIView):
+    """Lesson list endpoint"""
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
     pagination_class = MyPagination
 
 
 class LessonRetrieveAPIView(generics.RetrieveAPIView):
+    """Lesson retrieve endpoint"""
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
     permission_classes = (IsAuthenticated, IsModer | IsOwner,)
 
 
 class LessonUpdateAPIView(generics.UpdateAPIView):
+    """Lesson update endpoint"""
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
     permission_classes = (IsAuthenticated, IsModer | IsOwner,)
 
 
 class LessonDestroyAPIView(generics.DestroyAPIView):
+    """Lesson destroy endpoint"""
     queryset = Lesson.objects.all()
     permission_classes = (IsAuthenticated, IsOwner | ~IsModer,)
 
 
 class SubscriptionAPIView(APIView):
+    """Subscription endpoint"""
     serializer_class = SubscriptionSerializer
     permission_classes = [IsAuthenticated, IsOwner]
 

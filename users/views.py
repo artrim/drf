@@ -8,6 +8,7 @@ from users.serializers import PaymentsSerializer, UserSerializer
 
 
 class PaymentsListAPIView(generics.ListAPIView):
+    """Payments list endpoint"""
     serializer_class = PaymentsSerializer
     queryset = Payments.objects.all()
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -16,6 +17,7 @@ class PaymentsListAPIView(generics.ListAPIView):
 
 
 class UserCreateAPIView(generics.CreateAPIView):
+    """User create endpoint"""
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
